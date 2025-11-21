@@ -11,7 +11,7 @@ def idea():
         api_key=os.getenv("OPENROUTER_API_KEY"),
         base_url=os.getenv("BASE_URL"),
     )
-    prompt = [{"role": "user", "content": "Come up with a new business idea for AI Agents"}]
+    prompt = [{"role": "user", "content": "Reply with a new business idea for AI Agents, formatted with headings, sub-headings and bullet points"}]
     stream = client.chat.completions.create(model="x-ai/grok-4.1-fast:free", messages=prompt, stream=True)
 
     def event_stream():
